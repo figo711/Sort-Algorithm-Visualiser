@@ -89,6 +89,7 @@ public final class MainMenuScreen extends Screen {
         addCheckBox(new IterativeMergeSort(), sortAlgorithmContainer);
         
         JCheckBox soundCheckBox = new JCheckBox("Play Sounds");
+		soundCheckBox.setSelected(true);
         soundCheckBox.setAlignmentX(Component.LEFT_ALIGNMENT);
         soundCheckBox.setBackground(BACKGROUND_COLOUR);
         soundCheckBox.setForeground(Color.WHITE);
@@ -130,6 +131,7 @@ public final class MainMenuScreen extends Screen {
             
         });
 
+		checkBoxes.get(0).select();
     }
     
     private class AlgorithmCheckBox {
@@ -145,6 +147,10 @@ public final class MainMenuScreen extends Screen {
         public void unselect() {
             box.setSelected(false);
         }
+		
+		public void select() {
+			box.setSelected(true);
+		}
      
         
         public boolean isSelected() {
